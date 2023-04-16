@@ -1,0 +1,324 @@
+
+/** TRANSITION  **/
+@keyframes transitionIn{
+    from{
+        opacity: .5;
+        filter: blur(20px);
+    }
+
+    to{
+        opacity: 1;
+        filter: none;
+
+    }
+}
+
+
+
+
+/** OVERALL FORMAT   **/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/background.png);
+    background-size: cover;
+    position: relative;
+    padding-top: 200px;
+    animation: transitionIn 0.75s;
+    user-select: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    display: none;
+}
+/** OVERALL FORMAT ENDS  **/
+
+
+
+/*      NAVIGATION BAR    */
+nav{
+    width: 100%;
+    display: flex;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    float: right;
+    align-items: center;
+    background-color: rgba(19, 26, 39, 0.596);
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 20px 30px rgba(3, 3, 3, 0.418);
+    z-index: 10;
+}
+.logo img{
+    width: 300px;
+    float: left;
+}
+.nav-links{
+   flex: 1;
+   text-align: right;
+   padding-right: 1%;
+}
+.nav-links ul li{
+    display: inline-block;
+    padding: 8px 5px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: block;
+}
+.nav-links ul li a.active,
+.nav-links ul li a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    font-weight: 400;
+}
+.headerChar i{
+    display: none;
+}
+/*      NAVIGATION BAR ENDS   */
+
+
+
+/** SMALL SCREEN   **/
+
+@media only screen and (max-width: 850px){
+    .nav-links ul li{
+        display: block;
+        padding: 20px;
+        top: 20%;
+    }
+    .nav-links ul li a{
+        font-size: 30px;
+    }
+    .nav-links{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: -900px;
+        text-align: center;
+        z-index: 2;
+        background-color: rgb(0, 0, 0);
+        transition: 1s; 
+    }
+    .headerChar i{
+        text-align: right;
+        display: block;
+        color: white;
+        margin: 20px;
+        cursor: pointer;
+        font-size: 40px;
+    }
+    #menu{
+        position: absolute;
+        right: 0;
+    }
+}
+/** SMALL SCREEN ENDS  **/
+
+
+/**     HEADING TEXT     **/
+h1{
+    font-size: 62px;  
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+/**     HEADING TEXT ENDS   **/
+
+
+/***    CHARACTERS/CARDS  ***/
+.containerChar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    
+    padding-top: 150px;
+}
+.boxCard{
+    position: relative;
+    width: 300px;
+    height: 560px;
+    border-top: 1px solid rgba(224, 0, 0, 0.411);
+    border-bottom: 1px solid rgba(224, 0, 0, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    background: transparent;
+    transition: 0.5s;
+}
+.boxCard:hover{
+    width: 400px;
+    background-color: rgba(73, 16, 16, 0.753);
+    border: 1px solid rgba(224, 0, 0, 0);
+}
+.boxCard .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.boxCard .imgBx img{
+    max-width: 200px;
+    height: 500px;
+    transition: 0.5s;
+    filter: grayscale(100);
+}
+.boxCard:hover .imgBx img{
+    filter: none;
+}
+.boxCard:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom:-2px;
+    background:rgb(0, 0, 0);
+    z-index: -1;
+}
+.boxCard:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom:-2px;
+    background:rgb(0, 0, 0);
+    z-index: -2;
+}
+.boxCard .description{
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    top: 170px;
+    height: 90px;
+    width: 45%;
+    color: white;
+    justify-content: right;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.boxCard:hover .description{
+   opacity: 1;
+}
+.boxCard .description h2{
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1;
+ }
+ .boxCard .description span{
+    font-size: 14px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2;
+ }
+.boxCard .name{
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: 280px;
+    font-weight: 700;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    opacity: .1;
+    transition: 0.5s;
+}
+.boxCard:hover .name{
+    opacity: 1;
+}
+.boxCard .name{
+    font-size: 70px;
+    font-weight: 500px;
+    line-height: 20px;
+    color:aliceblue;
+    writing-mode: vertical-lr;
+}
+.imgBx .pochita img{
+    width: 100px;
+    height: 160px;  
+    position: absolute;
+    left: 95px;
+    bottom: -450px;
+}
+.imgBx .kobeni{
+    position: absolute;
+    left: 90px;
+}
+/***    CHARACTERS/CARDS END ***/
+
+
+/** FOOTER SECTION   **/
+
+.container-footer{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer{
+    background-color: rgba(19, 26, 39, 0.596);
+    padding: 30px 0;
+    margin-top: 10%;
+}
+footer div img{
+    width: 300px;
+}
+footer div{
+    text-align: center;
+}
+footer div h3{
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: aliceblue;
+}
+.col{
+    flex-grow: 1;
+}
+.col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.637);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: black;
+    transition: all 0.5s ease;
+}
+.col .social-links a:hover{
+    color:rgba(255, 0, 0, 0.932);
+    background-color: azure;
+}
+.credits a{
+    color: white;
+}
+/** FOOTER SECTION ENDS  **/

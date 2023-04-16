@@ -1,0 +1,279 @@
+
+/*      TRANSITION    */
+
+@keyframes transitionIn{
+    from{
+        opacity: .5;
+        filter: blur(20px);
+    }
+
+    to{
+        opacity: 1;
+        filter: none;
+
+    }
+}
+/*      TRANSITION  ENDS  */
+
+/*      OVERALL FORMAT START   */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/background.png);
+    background-size: cover;
+    position: relative;
+    padding-top: 200px;
+    animation: transitionIn 0.75s;
+    user-select: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    display: none;
+}
+
+/*    OVERALL FORMAT ENDS  */
+
+
+
+/*      NAVIGATION BAR START    */
+nav{
+    width: 100%;
+    display: flex;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    float: right;
+    align-items: center;
+    background-color: rgba(19, 26, 39, 0.596);
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 20px 30px rgba(3, 3, 3, 0.418);
+    z-index: 10;
+}
+.logo img{
+    width: 300px;
+    float: left;
+}
+.nav-links{
+   flex: 1;
+   text-align: right;
+   padding-right: 1%;
+}
+.nav-links ul li{
+    display: inline-block;
+    padding: 8px 5px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: block;
+}
+.nav-links ul li a.active,
+.nav-links ul li a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    font-weight: 400;
+}
+.headerManga i{
+    display: none;
+}
+/*      NAVIGATION BAR ENDS    */
+
+/*      SMALL SCREEN    */
+@media only screen and (max-width: 850px){
+    .nav-links ul li{
+        display: block;
+        padding: 20px;
+        top: 20%;
+    }
+    .nav-links ul li a{
+        font-size: 30px;
+    }
+    .nav-links{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: -900px;
+        text-align: center;
+        z-index: 2;
+        background-color: rgb(0, 0, 0);
+        transition: 1s; 
+    }
+    .headerManga i{
+        text-align: right;
+        display: block;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 40px;
+    }
+    #menu{
+        position: absolute;
+        right: 0;
+    }
+}
+/*      SMALL SCREEN ENDS   */
+
+/*      HEADING TEXT START    */
+h1{
+    font-size: 62px;  
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+/*      HEADING TEXT ENDS    */
+
+
+/*      MANGA START   */
+.containerManga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 150px;
+}
+.boxVol{
+    position: relative;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    transition: 0.5s;
+    border: 1px solid rgb(252, 241, 241);
+    box-shadow: 10px 10px rgba(230, 19, 19, 0.37);
+}
+
+.boxVol:hover{
+    backdrop-filter: blur(3px);
+}
+.boxVol .imgVol{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.boxVol .imgVol img{
+    max-width: 100%;
+    filter:grayscale(100%);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.boxVol:hover .imgVol img{
+    filter: none;
+    opacity: 1;
+    background: none;
+}
+.boxVol:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: transparent;
+    z-index: -1;
+}
+.boxVol:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: transparent;
+    z-index: -2;
+    filter: blur(5px);
+}
+.boxVol .volNum{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    align-items: left;
+    transition: 1s;
+}
+.boxVol:hover .volNum{
+    transition: 1s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+}
+
+.boxVol .volNum h2{
+    font-size: 70px;
+    font-weight: 500px;
+    line-height: 20px;
+    color:aliceblue;
+}
+/*      MANGA ENDS   */
+
+/*      FOOTER START   */
+.container-footer{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer{
+    background-color: rgba(19, 26, 39, 0.596);
+    padding: 30px 0;
+    margin-top: 10%;
+}
+footer div img{
+    width: 300px;
+}
+footer div{
+    text-align: center;
+}
+footer div h3{
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: aliceblue;
+}
+.col{
+    flex-grow: 1;
+}
+.col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.637);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: black;
+    transition: all 0.5s ease;
+}
+.col .social-links a:hover{
+    color:rgba(255, 0, 0, 0.932);
+    background-color: azure;
+}
+.credits a{
+    color: white;
+}
+/*      FOOTER ENDS   */

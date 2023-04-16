@@ -1,0 +1,264 @@
+
+/*      TRANSITION START    */
+
+@keyframes transitionIn{
+    from{
+        opacity: .5;
+        filter: blur(20px);
+    }
+
+    to{
+        opacity: 1;
+        filter: none;
+
+    }
+}
+/*      TRANSITION ENDS   */
+
+/*      OVERALL FORMAT START    */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/background.png);
+    background-size: cover;
+    position: relative;
+    padding-top: 200px;
+    animation: transitionIn 0.75s;
+    user-select: none;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    display: none;
+}
+
+/*      OVERALL FORMAT START    */
+
+/*      NAVBAR START    */
+nav{
+    width: 100%;
+    display: flex;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    float: right;
+    align-items: center;
+    background-color: rgba(19, 26, 39, 0.596);
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 20px 30px rgba(3, 3, 3, 0.418);
+    z-index: 10;
+}
+.logo img{
+    width: 300px;
+    float: left;
+}
+.nav-links{
+   flex: 1;
+   text-align: right;
+   padding-right: 1%;
+}
+.nav-links ul li{
+    display: inline-block;
+    padding: 8px 5px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: block;
+}
+.nav-links ul li a.active,
+.nav-links ul li a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    font-weight: 400;
+}
+.headerCast i{
+    display: none;
+}
+/*      NAVBAR ENDS    */
+
+/*      SMALL SCREEN START    */
+@media only screen and (max-width: 850px){
+    .nav-links ul li{
+        display: block;
+        padding: 20px;
+        top: 20%;
+    }
+    .nav-links ul li a{
+        font-size: 30px;
+    }
+    .nav-links{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: -900px;
+        text-align: center;
+        z-index: 2;
+        background-color: rgb(0, 0, 0);
+        transition: 1s; 
+    }
+    .headerCast i{
+        text-align: right;
+        display: block;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 40px;
+    }
+    #menu{
+        position: absolute;
+        right: 0;
+    }
+    #description{
+        height: 350px;
+    }
+}
+/*      SMALL SCREEN ENDS    */
+
+/*      HEADING TEXT START    */
+h1{
+    font-size: 62px;  
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+/*      HEADING TEXT ENDS    */
+
+/*      STAFF START    */
+.author{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    align-items: center;
+    letter-spacing: 25px;
+    transition: 0.5s;
+    width: 100%;
+    height: 100px;
+}
+.author:hover{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    height: 200px;
+
+}
+.castBody .author h2{
+    font-size: 50px; 
+}
+.castBody .author h2 span{
+    opacity: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.castBody .author:hover h2 span{
+    opacity: 1;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+}
+.containerCast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    color: white;
+    padding-top: 150px;
+}
+
+.castStaff{
+    position: relative;
+    width: 450px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 90px;
+    background: transparent;
+    transition: 0.5s;
+}
+.castStaff:hover{
+    height: 260px;
+    border-top: 1px solid rgba(224, 0, 0, 0.884);
+    border-bottom: 1px solid rgba(224, 0, 0, 0.808);
+}
+.castStaff h2{
+    font-size: 30px; 
+    text-align: center;
+    letter-spacing: 25px;
+}
+
+.castStaff span{
+    font-size: 20px;
+    justify-content: center;
+    letter-spacing: 2px;
+    line-height: 1px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.castStaff:hover span{
+    opacity: 1;
+}
+/*      STAFF ENDS    */
+
+
+/*      FOOTER START    */
+.container-footer{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer{
+    background-color: rgba(19, 26, 39, 0.596);
+    padding: 30px 0;
+    margin-top: 10%;
+}
+footer div img{
+    width: 300px;
+}
+footer div{
+    text-align: center;
+}
+footer div h3{
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: aliceblue;
+}
+.col{
+    flex-grow: 1;
+}
+.col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.637);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: black;
+    transition: all 0.5s ease;
+}
+.col .social-links a:hover{
+    color:rgba(255, 0, 0, 0.932);
+    background-color: azure;
+}
+.credits a{
+    color: white;
+}
+/*      FOOTER ENDS    */
