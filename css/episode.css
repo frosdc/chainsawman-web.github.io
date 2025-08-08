@@ -145,6 +145,22 @@ nav{
         left: 50%;
         max-width: 60px;
     }
+        .eps-box {
+        position: static;
+        transform: none;
+        margin: auto;
+    }
+      .leftTabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        border: none;
+    }
+    .leftTabs h3 {
+        flex: 0 0 auto;
+        padding: 10px;
+    }
 }
 /*      SMALL SCREEN ENDS  */
 
@@ -167,14 +183,11 @@ nav{
     left: 50%;
     display: grid;
 }
-.containerEps{
-    width: 95vmin;
-    font-size: 20px;
-    min-width: 30em;
-    height: 30em;
-    margin-top: 400px;
-    display: grid;
-    grid-template-columns: 2fr 9fr;
+.containerEps {
+    width: 95%;
+    min-width: unset;
+    height: auto;
+    grid-template-columns: 1fr; 
 }
 .leftTabs{
     border: 1px solid rgba(238, 9, 9, 0.678);
@@ -201,10 +214,10 @@ nav{
     background-color: white;
     transition: 0.5s;
 }
-.eps-content img{
-    width: 850px;
-    height: 550px;
-    padding: 50px;
+.eps-content img {
+    max-width: 100%;
+    height: auto;
+    padding: 2%;
     border: 3px solid rgba(226, 0, 0, 0.514);
 }
 .eps-content h4{
@@ -289,3 +302,4 @@ footer div h3{
     color: white;
 }
 /*     EPISODE ENDS   */
+
