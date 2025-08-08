@@ -127,6 +127,24 @@ nav{
         right: 0;
     }
 }
+@media (max-width: 1024px) {
+    .boxCard {
+        flex: 1 1 calc(33.33% - 80px); /* 3 per row */
+        max-width: calc(33.33% - 80px);
+    }
+}
+@media (max-width: 768px) {
+    .boxCard {
+        flex: 1 1 calc(50% - 80px); /* 2 per row */
+        max-width: calc(50% - 80px);
+    }
+}
+@media (max-width: 480px) {
+    .boxCard {
+        flex: 1 1 100%; /* 1 per row */
+        max-width: 100%;
+    }
+}
 /** SMALL SCREEN ENDS  **/
 
 
@@ -141,27 +159,18 @@ h1{
 
 
 /***    CHARACTERS/CARDS  ***/
-.containerChar{
+.containerChar {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-wrap: wrap;
-    
     padding-top: 150px;
 }
+
 .boxCard{
-    position: relative;
-    width: 300px;
-    height: 560px;
-    border-top: 1px solid rgba(224, 0, 0, 0.411);
-    border-bottom: 1px solid rgba(224, 0, 0, 0.411);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-    background: transparent;
-    transition: 0.5s;
+  flex: 1 1 calc(25% - 80px); /* 4 per row minus margins */
+    max-width: calc(25% - 80px);
 }
 .boxCard:hover{
     width: 400px;
@@ -321,3 +330,4 @@ footer div h3{
     color: white;
 }
 /** FOOTER SECTION ENDS  **/
+
