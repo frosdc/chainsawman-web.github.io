@@ -148,8 +148,8 @@ h1{
     align-items: flex-start;
     flex-wrap: wrap;
     padding-top: 150px;
-    max-width: calc((300px + 80px) * 4); /* 4 cards + margins */
-    margin: 0 auto; /* center the row */
+    max-width: calc((300px + 80px) * 4); 
+    margin: 0 auto; 
 }
 
 .boxCard {
@@ -172,27 +172,20 @@ h1{
     border: 1px solid rgba(224, 0, 0, 0);
 }
 
-/* keep rest of your .boxCard styles here unchanged... */
 
-/* Responsive breakpoints */
-@media (max-width: 1200px) {
-    .boxCard {
-        flex: 1 1 calc(33.33% - 40px); /* 3 per row */
-        max-width: calc(33.33% - 40px);
+@media (max-width: 1400px) {
+    .containerChar {
+        max-width: calc((300px + 80px) * 3); /* 3 per row */
     }
 }
-
-@media (max-width: 900px) {
-    .boxCard {
-        flex: 1 1 calc(50% - 40px); /* 2 per row */
-        max-width: calc(50% - 40px);
+@media (max-width: 1100px) {
+    .containerChar {
+        max-width: calc((300px + 80px) * 2); /* 2 per row */
     }
 }
-
-@media (max-width: 600px) {
-    .boxCard {
-        flex: 1 1 100%; /* 1 per row */
-        max-width: 100%;
+@media (max-width: 700px) {
+    .containerChar {
+        max-width: calc((300px + 80px) * 1); /* 1 per row */
     }
 }
 .boxCard .imgBx{
@@ -348,6 +341,7 @@ footer div h3{
     color: white;
 }
 /** FOOTER SECTION ENDS  **/
+
 
 
 
