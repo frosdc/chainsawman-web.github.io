@@ -96,18 +96,21 @@ nav .logo img {
 
 .containerChar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    max-width: 1200px; 
+    max-width: calc(220px * 4 + 20px * 3);
     margin: 0 auto; 
+    justify-content: center;
 }
 
-/* Force exactly 4 max on large screens */
-@media (min-width: 1024px) {
+/* On smaller screens, still responsive */
+@media (max-width: 1024px) {
     .containerChar {
-        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 }
+
 
 
 .boxCard {
@@ -201,4 +204,5 @@ footer img {
         display: none;
     }
 }
+
 
