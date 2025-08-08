@@ -12,21 +12,25 @@ var navLinks = document.getElementById("navLinks");
 
 
 //EPISODE TAB (CHANGE ONCLICK)
-let tabs = document.querySelectorAll(".leftTabs h3");
-let epsContents = document.querySelectorAll(".eps-content div");
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".leftTabs h3");
+    const episodes = document.querySelectorAll(".eps-content > div");
 
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
 
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
 
-tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-        epsContents.forEach((content) => {
-            content.classList.remove("active");
+            
+            episodes.forEach(ep => ep.classList.remove("active"));
+
+           
+            if (episodes[index]) {
+                episodes[index].classList.add("active");
+            }
         });
-        tabs.forEach((tab) => {
-            tab.classList.remove("active");
-        });
-        epsContents[index].classList.add("active");
-        tabs[index].classList.add("active");
     });
 });
+
 //EPISODE ENDS
