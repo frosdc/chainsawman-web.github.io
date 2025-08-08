@@ -142,21 +142,17 @@ h1{
 
 
 /***    CHARACTERS/CARDS  ***/
-.containerChar{
+.containerChar {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding-top: 150px;
-    gap: 40px; /* makes wrap cleaner than margin gaps */
+    max-width: calc((300px + 80px) * 4); /* 4 cards + margins */
+    margin: 0 auto; /* center the row */
 }
 
-/* Limit to 4 per row on large screens */
 .boxCard {
-    flex: 1 1 calc(25% - 40px); /* 4 per row accounting for gap */
-    max-width: calc(25% - 40px);
-    position: relative;
     width: 300px;
     height: 560px;
     border-top: 1px solid rgba(224, 0, 0, 0.411);
@@ -167,9 +163,10 @@ h1{
     margin: 40px;
     background: transparent;
     transition: 0.5s;
+    position: relative;
 }
 
-.boxCard:hover{
+.boxCard:hover {
     width: 400px;
     background-color: rgba(73, 16, 16, 0.753);
     border: 1px solid rgba(224, 0, 0, 0);
@@ -351,5 +348,6 @@ footer div h3{
     color: white;
 }
 /** FOOTER SECTION ENDS  **/
+
 
 
