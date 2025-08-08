@@ -217,9 +217,30 @@ nav{
     font-weight: 600;
     color: white;
 }
-.eps-content{
-    padding: 1em 1.5em;
+.eps-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; 
+    justify-items: center; 
 }
+
+/* Optional: responsive breakpoints to reduce count on smaller screens */
+@media (max-width: 1400px) {
+    .eps-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 1100px) {
+    .eps-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 700px) {
+    .eps-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 .eps-content p{
     text-align: justify;
     line-height: 1.9;
@@ -289,4 +310,5 @@ footer div h3{
 .credits a{
     color: white;
 }
+
 /*     EPISODE ENDS   */
